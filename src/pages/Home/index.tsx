@@ -12,7 +12,7 @@ import {
   Title,
   TitleContainer,
   TitleItem,
-  TitleItemIconContainer,
+  IconContainer,
   TitleItemsContainer,
 } from "./styled";
 import { Clock, Coffee, Package, ShoppingCart } from "@phosphor-icons/react";
@@ -42,27 +42,27 @@ export function Home() {
           </Title>
           <TitleItemsContainer>
             <TitleItem>
-              <TitleItemIconContainer tint="orange">
+              <IconContainer tint="orange">
                 <ShoppingCart size={16} weight="fill" />
-              </TitleItemIconContainer>
+              </IconContainer>
               <p>Safe and secure payments</p>
             </TitleItem>
             <TitleItem>
-              <TitleItemIconContainer tint="gray">
+              <IconContainer tint="gray">
                 <Package size={16} weight="fill" />
-              </TitleItemIconContainer>
+              </IconContainer>
               <p>Steadily packaged with care</p>
             </TitleItem>
             <TitleItem>
-              <TitleItemIconContainer tint="yellow">
+              <IconContainer tint="yellow">
                 <Clock size={16} weight="fill" />
-              </TitleItemIconContainer>
+              </IconContainer>
               <p>Fast delivery and tracking</p>
             </TitleItem>
             <TitleItem>
-              <TitleItemIconContainer tint="purple">
+              <IconContainer tint="purple">
                 <Coffee size={16} weight="fill" />
-              </TitleItemIconContainer>
+              </IconContainer>
               <p>Your coffee arrives fresh</p>
             </TitleItem>
           </TitleItemsContainer>

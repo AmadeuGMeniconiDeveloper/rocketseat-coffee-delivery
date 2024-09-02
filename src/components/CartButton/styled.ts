@@ -25,7 +25,7 @@ export const Counter = styled.span`
   place-content: center;
   border-radius: 50%;
   background-color: ${props => props.theme.colors.primary.dark};
-  color: ${props => props.theme.colors.base.contrast};
+  color: ${props => props.theme.colors.base.background};
   font-size: ${props => props.theme.tipography.text.size.xs};
   font-weight: ${props => props.theme.tipography.text.weight};
   user-select: none;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DefaultTheme } from "styled-components/dist/types";
 
 export const HomeContainer = styled.main`
   display: flex;
@@ -81,11 +82,11 @@ export const TitleItem = styled.div`
   gap: 1rem;
 `;
 
-interface TitleItemIconContainerProps {
-  tint: "orange" | "yellow" | "green" | "purple" | "red" | "gray";
+interface IconContainerProps {
+  tint: keyof DefaultTheme["colors"]["tints"];
 }
 
-export const TitleItemIconContainer = styled.span<TitleItemIconContainerProps>`
+export const IconContainer = styled.span<IconContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +95,7 @@ export const TitleItemIconContainer = styled.span<TitleItemIconContainerProps>`
   border-radius: 50%;
 
   background-color: ${props => props.theme.colors.tints[props.tint]};
-  color: ${props => props.theme.colors.base.contrast};
+  color: ${props => props.theme.colors.base.background};
 `;
 
 export const CoffeeListContainer = styled.div`

@@ -1,5 +1,8 @@
 import { FormEvent, useContext } from "react";
 
+import { useNavigate } from "react-router-dom";
+import { NumberInput } from "../../components/NumberInput";
+
 import {
   CoffeeContext,
   ICartItem,
@@ -20,7 +23,6 @@ import {
   FormPaymentInputContainer,
   FormPaymentSection,
   FormSectionTitle,
-  NumberInputContainer,
   Order,
   OrderContainer,
   RemoveButton,
@@ -33,9 +35,7 @@ import {
   CreditCard,
   CurrencyDollar,
   MapPin,
-  Minus,
   Money,
-  Plus,
   Trash,
 } from "@phosphor-icons/react";
 
@@ -46,7 +46,10 @@ export function Checkout() {
     removeCoffeeFromCart,
     updateOrderPaymentMethod,
     updateOrderAddress,
+    submitOrder,
   } = useContext(CoffeeContext);
+
+  const navigate = useNavigate();
 
   function handleChangeCartItemAmount(item: ICartItem, operation: Operation) {
     if (item.amount === 1 && operation === "decrement") {
@@ -55,6 +58,7 @@ export function Checkout() {
     if (item.amount === 99 && operation === "increment") {
       return;
     }
+
     updateCoffeeAmountInCart(item.coffee, operation);
   }
 
@@ -68,8 +72,9 @@ export function Checkout() {
 
   function handleSubmitOrder(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    submitOrder(order);
 
-    console.log("Enviado");
+    navigate("/success", { replace: true });
   }
 
   const cartItemList = order.cart.map(item => (
@@ -79,32 +84,13 @@ export function Checkout() {
         <div>
           <p>{item.coffee.name}</p>
           <div>
-            {/* #FIX/CLARITY: Should create a new component for number input ? */}
-            <NumberInputContainer>
-              <button
-                id="decrement"
-                onClick={e =>
-                  handleChangeCartItemAmount(
-                    item,
-                    e.currentTarget.id as Operation
-                  )
-                }
-              >
-                <Minus size={16} />
-              </button>
-              <span>{item.amount}</span>
-              <button
-                id="increment"
-                onClick={e =>
-                  handleChangeCartItemAmount(
-                    item,
-                    e.currentTarget.id as Operation
-                  )
-                }
-              >
-                <Plus size={16} />
-              </button>
-            </NumberInputContainer>
+            <NumberInput
+              amount={item.amount}
+              handleChangeAmount={operation =>
+                handleChangeCartItemAmount(item, operation)
+              }
+            />
+
             <RemoveButton onClick={() => handleRemoveCartItem(item)}>
               <Trash size={20} />
             </RemoveButton>
@@ -228,16 +214,16 @@ export function Checkout() {
             <FormPaymentSection id="payment" disabled={isDiabled}>
               <FormPaymentInputContainer
                 htmlFor="credit"
-                selected={order.payment === "credit"}
+                selected={order.payment === "credit card"}
               >
                 <CreditCard size={16} weight="regular" color="#8047F8" />
                 CREDIT CARD
                 <input
                   id="credit"
-                  value="credit"
+                  value="credit card"
                   name="payment"
                   type="radio"
-                  checked={order.payment === "credit"}
+                  checked={order.payment === "credit card"}
                   onChange={e => handleSelectPayment(e.target.value as Payment)}
                   disabled={isDiabled}
                   required
@@ -245,14 +231,14 @@ export function Checkout() {
               </FormPaymentInputContainer>
               <FormPaymentInputContainer
                 htmlFor="debit"
-                selected={order.payment === "debit"}
+                selected={order.payment === "debit card"}
               >
                 <input
                   id="debit"
-                  value="debit"
+                  value="debit card"
                   name="payment"
                   type="radio"
-                  checked={order.payment === "debit"}
+                  checked={order.payment === "debit card"}
                   onChange={e => handleSelectPayment(e.target.value as Payment)}
                   disabled={isDiabled}
                   required

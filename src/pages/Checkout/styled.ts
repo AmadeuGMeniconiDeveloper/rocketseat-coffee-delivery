@@ -4,14 +4,12 @@ export const CheckoutContainer = styled.main`
   display: flex;
   justify-content: center;
   gap: 2rem;
-
   margin-top: 2.5rem;
 `;
 
 export const CheckoutFormContainer = styled.div`
   max-width: 640px;
   min-width: 500px;
-
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -32,11 +30,8 @@ export const FormAddressContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
   padding: 2.4rem;
-
   border-radius: 6px;
-
   background-color: ${props => props.theme.colors.base.card};
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
 `;
@@ -74,12 +69,9 @@ export const FormAddressSection = styled.div`
     width: 100%;
     min-width: 200px;
     height: 2.5rem;
-
     padding: 0.75rem;
     border-radius: 6px;
-
     border: none;
-
     background-color: ${props => props.theme.colors.base.input};
     font-size: ${props => props.theme.tipography.text.size.sm};
     line-height: ${props => props.theme.tipography.text.lineHeight.tall};
@@ -119,11 +111,8 @@ export const FormPaymentContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
   padding: 2.4rem;
-
   border-radius: 6px;
-
   background-color: ${props => props.theme.colors.base.card};
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
 `;
@@ -131,12 +120,7 @@ export const FormPaymentContainer = styled.div`
 export const FormPaymentSection = styled.fieldset`
   display: flex;
   gap: 1rem;
-
   border: none;
-
-  &:disabled {
-    filter: saturate(0);
-  }
 `;
 
 interface IFormPaymentInputContainerProps {
@@ -150,25 +134,20 @@ export const FormPaymentInputContainer = styled.label<IFormPaymentInputContainer
   align-items: center;
   height: 3.1rem;
   gap: 0.5rem;
-
   padding: 1rem;
-
   border-radius: 6px;
   outline: ${props =>
     props.selected
       ? `1px solid ${props.theme.colors.secondary.default}`
       : "none"};
-
   background-color: ${props =>
     props.selected
       ? props.theme.colors.secondary.light
       : props.theme.colors.base.button};
-
   font-size: ${props => props.theme.tipography.text.size.xs};
   line-height: 100%;
 
   user-select: none;
-  cursor: pointer;
 
   & > input[type="radio"] {
     position: absolute;
@@ -177,19 +156,12 @@ export const FormPaymentInputContainer = styled.label<IFormPaymentInputContainer
     width: 100%;
     height: 100%;
     opacity: 0;
-
-    cursor: pointer;
-
-    &:disabled {
-      cursor: default;
-    }
   }
 `;
 
 export const OrderContainer = styled.div`
   max-width: 448px;
   min-width: 400px;
-
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -202,14 +174,11 @@ export const OrderContainer = styled.div`
 
 export const Order = styled.div`
   height: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 2.4rem;
-
   border-radius: 6px 36px 6px 36px;
-
   background-color: ${props => props.theme.colors.base.card};
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
 `;
@@ -240,10 +209,8 @@ export const CartEmptyMessage = styled.span`
 export const CartItemContainer = styled.li`
   display: flex;
   justify-content: space-between;
-
   padding-block: 2rem;
   padding-inline: 0.5rem;
-
   border-bottom: 1px solid ${props => props.theme.colors.base.button};
 
   & > div {
@@ -282,40 +249,13 @@ export const CartItemContainer = styled.li`
   }
 `;
 
-export const NumberInputContainer = styled.div`
-  height: 2.25rem;
-  width: 5.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 6px;
-  background-color: ${props => props.theme.colors.base.button};
-
-  button {
-    display: flex;
-    align-items: center;
-    border: none;
-    background-color: transparent;
-    color: ${props => props.theme.colors.secondary.dark};
-
-    cursor: pointer;
-  }
-
-  span {
-    text-align: center;
-    width: 1.2rem;
-  }
-`;
-
 export const RemoveButton = styled.button`
   display: flex;
   align-items: center;
-  padding: 0.5rem;
-
   gap: 0.25rem;
   border: none;
   border-radius: 6px;
+  padding: 0.5rem;
   background-color: ${props => props.theme.colors.base.button};
   color: ${props => props.theme.colors.tints.red};
   cursor: pointer;
@@ -349,22 +289,13 @@ export const TotalContainer = styled.div`
 export const SubmitButton = styled.button`
   width: 100%;
   padding: 0.725rem;
-
   border-radius: 6px;
   border: none;
-
   margin-top: 0.5rem;
-
   background-color: ${props => props.theme.colors.primary.default};
-  color: ${props => props.theme.colors.base.contrast};
-
+  color: ${props => props.theme.colors.base.background};
   font-weight: ${props => props.theme.tipography.text.weight.bold};
   font-size: ${props => props.theme.tipography.text.size.sm};
 
   cursor: pointer;
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
 `;

@@ -90,35 +90,6 @@ export const AddToOrderContainer = styled.div`
   gap: 0.5rem;
 `;
 
-export const NumberInputContainer = styled.div`
-  height: 2.25rem;
-  width: 5.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  padding: 0.5rem;
-  border-radius: 6px;
-  background-color: ${props => props.theme.colors.base.button};
-
-  button {
-    display: flex;
-    align-items: center;
-
-    border: none;
-
-    background-color: transparent;
-    color: ${props => props.theme.colors.secondary.dark};
-
-    cursor: pointer;
-  }
-
-  span {
-    text-align: center;
-    width: 1.2rem;
-  }
-`;
-
 export const AddToOrderButton = styled.button`
   height: 2.25rem;
   width: 2.25rem;
@@ -128,12 +99,12 @@ export const AddToOrderButton = styled.button`
   border-radius: 6px;
   border: none;
   background-color: ${props => props.theme.colors.secondary.default};
-  color: ${props => props.theme.colors.base.contrast};
+  color: ${props => props.theme.colors.base.background};
   cursor: pointer;
 
   &:hover {
     background-color: ${props => props.theme.colors.secondary.default};
-    box-shadow: 1px 1px 3px ${props => props.theme.colors.base.label};
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
   }
 
   &:active {

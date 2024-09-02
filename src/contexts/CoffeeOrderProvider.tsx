@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CoffeesData: ICoffee[] = [
   {
@@ -119,7 +120,7 @@ const CoffeesData: ICoffee[] = [
 ];
 
 export type Operation = "increment" | "decrement";
-export type Payment = "credit" | "debit" | "cash";
+export type Payment = "credit card" | "debit card" | "cash";
 export type Tag = "traditional" | "special" | "alcoholic" | "cold" | "milk";
 
 export interface ICoffee {
@@ -139,13 +140,13 @@ export interface ICartItem {
 export interface ICoffeeOrder {
   cart: ICartItem[];
   address: {
-    zipcode?: string;
-    street?: string;
-    number?: string;
-    complement?: string;
-    neighborhood?: string;
-    city?: string;
-    state?: string;
+    zipcode: string;
+    street: string;
+    number: string;
+    complement: string;
+    neighborhood: string;
+    city: string;
+    state: string;
   };
   payment?: Payment;
   subTotal: number;
@@ -171,7 +172,7 @@ interface ICoffeeContext {
     value: string;
   }) => void;
   updateOrderPaymentMethod: (payment: Payment) => void;
-  // submitOrder: (orderData: ICoffeeOrder) => void;
+  submitOrder: (orderData: ICoffeeOrder) => void;
 }
 
 export const CoffeeContext = createContext({} as ICoffeeContext);
@@ -278,6 +279,29 @@ export function CoffeeOrderProvider({ children }: ICoffeeOrderProviderProps) {
     setOrder(prev => ({ ...prev, subTotal, total }));
   }
 
+  function submitOrder(orderData: ICoffeeOrder) {
+    localStorage.setItem(
+      "@coffee-delivery:confirmed-order",
+      JSON.stringify(orderData)
+    );
+
+    setOrder({
+      cart: [],
+      address: {
+        zipcode: "",
+        street: "",
+        number: "",
+        complement: "",
+        neighborhood: "",
+        city: "",
+        state: "",
+      },
+      subTotal: 0,
+      deliveryFee: 3.5,
+      total: 0,
+    });
+  }
+
   useEffect(() => {
     updateOrderTotal();
   }, [order.cart]);
@@ -292,6 +316,7 @@ export function CoffeeOrderProvider({ children }: ICoffeeOrderProviderProps) {
         updateCoffeeAmountInCart,
         updateOrderAddress,
         updateOrderPaymentMethod,
+        submitOrder,
       }}
     >
       {children}
