@@ -6,8 +6,6 @@ import { lightTheme } from "./styles/themes/light";
 import { GlobalStyles } from "./styles/global";
 import { CoffeeOrderProvider } from "./contexts/CoffeeOrderProvider";
 
-import pngs from "./assets/*.png";
-
 function App() {
   return (
     <ThemeProvider theme={lightTheme}>
