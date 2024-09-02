@@ -185,7 +185,7 @@ Error generating stack: `+i.message+`
 
     user-select: none;
   }
-`;function bf({amount:e,handleChangeAmount:t}){return y.jsxs(R4,{children:[y.jsx("button",{id:"decrement",onClick:()=>t("decrement"),children:y.jsx(If,{size:16})}),y.jsx("span",{children:e}),y.jsx("button",{id:"increment",onClick:()=>t("increment"),children:y.jsx(Bf,{size:16})})]})}function F4({coffee:e}){const{moveCoffeeToCart:t}=S.useContext(Xr),[n,r]=S.useState(1);function l(a){a==="increment"&&n<99&&r(u=>u+1),a==="decrement"&&n>1&&r(u=>u-1)}function i(){t(e,n)}const o=e.tags.map(a=>y.jsx("li",{children:a},a));return y.jsxs(_2,{children:[y.jsxs(M2,{children:[y.jsx("img",{src:e.image,alt:`Picture of a ${e.name}`}),y.jsx(V2,{children:o}),y.jsx("h1",{children:e.name}),y.jsx("p",{children:e.description})]}),y.jsxs(z2,{children:[y.jsxs(N2,{children:[y.jsx(Z2,{children:"R$"})," ",y.jsx(L2,{children:e.price})]}),y.jsxs(R2,{children:[y.jsx(bf,{amount:n,handleChangeAmount:l}),y.jsx(F2,{onClick:i,children:y.jsx(Wf,{size:24,weight:"fill"})})]})]})]})}const T4="/assets/banner-bg-BHdq_Mli.png",I4="/assets/banner-img-V18Gx2mo.png",D4=M.main`
+`;function bf({amount:e,handleChangeAmount:t}){return y.jsxs(R4,{children:[y.jsx("button",{id:"decrement",onClick:()=>t("decrement"),children:y.jsx(If,{size:16})}),y.jsx("span",{children:e}),y.jsx("button",{id:"increment",onClick:()=>t("increment"),children:y.jsx(Bf,{size:16})})]})}function F4({coffee:e}){const{moveCoffeeToCart:t}=S.useContext(Xr),[n,r]=S.useState(1);function l(a){a==="increment"&&n<99&&r(u=>u+1),a==="decrement"&&n>1&&r(u=>u-1)}function i(){t(e,n)}const o=e.tags.map(a=>y.jsx("li",{children:a},a));return y.jsxs(_2,{children:[y.jsxs(M2,{children:[y.jsx("img",{src:e.image,alt:`Picture of a ${e.name}`}),y.jsx(V2,{children:o}),y.jsx("h1",{children:e.name}),y.jsx("p",{children:e.description})]}),y.jsxs(z2,{children:[y.jsxs(N2,{children:[y.jsx(Z2,{children:"R$"})," ",y.jsx(L2,{children:e.price})]}),y.jsxs(R2,{children:[y.jsx(bf,{amount:n,handleChangeAmount:l}),y.jsx(F2,{onClick:i,children:y.jsx(Wf,{size:24,weight:"fill"})})]})]})]})}const T4="/rocketseat-coffee-delivery/assets/banner-bg-BHdq_Mli.png",I4="/rocketseat-coffee-delivery/assets/banner-img-V18Gx2mo.png",D4=M.main`
   display: flex;
   flex-direction: column;
 
@@ -582,7 +582,7 @@ Error generating stack: `+i.message+`
   border-radius: 50%;
   background-color: ${e=>e.theme.colors.tints[e.tint]};
   color: ${e=>e.theme.colors.base.background};
-`,vg="/assets/Illustration-YOVzfe4Z.svg";function yg(){const e=JSON.parse(localStorage.getItem("@coffee-delivery:confirmed-order"));return y.jsx(y.Fragment,{children:e&&y.jsxs(pg,{children:[y.jsxs(hg,{children:[y.jsx("h1",{children:"Success! Order confirmed"}),y.jsx("p",{children:"Your order was successfully completed."})]}),y.jsxs(mg,{children:[y.jsxs(gg,{children:[y.jsxs("div",{children:[y.jsx(Co,{tint:"purple",children:y.jsx(Di,{size:20,weight:"fill"})}),y.jsxs("span",{children:[y.jsxs("p",{children:["Delivered to"," ",y.jsxs("strong",{children:[e.address.street,", ",e.address.number]})]}),e.address.neighborhood," - ",e.address.city,","," ",e.address.state]})]}),y.jsxs("div",{children:[y.jsx(Co,{tint:"yellow",children:y.jsx(ju,{size:20,weight:"fill"})}),y.jsxs("span",{children:[y.jsx("p",{children:"Delivery due to "}),y.jsx("p",{children:y.jsx("strong",{children:"20 min"})})]})]}),y.jsxs("div",{children:[y.jsx(Co,{tint:"orange",children:y.jsx(Hu,{size:20,weight:"fill"})}),y.jsxs("span",{children:[y.jsx("p",{children:"Payment upon delivery"}),y.jsx("p",{children:y.jsx("strong",{children:String(e.payment).toUpperCase()})})]})]})]}),y.jsx("img",{src:vg,alt:"image"})]})]})})}const wg=M.header`
+`,vg="/rocketseat-coffee-delivery/assets/Illustration-YOVzfe4Z.svg";function yg(){const e=JSON.parse(localStorage.getItem("@coffee-delivery:confirmed-order"));return y.jsx(y.Fragment,{children:e&&y.jsxs(pg,{children:[y.jsxs(hg,{children:[y.jsx("h1",{children:"Success! Order confirmed"}),y.jsx("p",{children:"Your order was successfully completed."})]}),y.jsxs(mg,{children:[y.jsxs(gg,{children:[y.jsxs("div",{children:[y.jsx(Co,{tint:"purple",children:y.jsx(Di,{size:20,weight:"fill"})}),y.jsxs("span",{children:[y.jsxs("p",{children:["Delivered to"," ",y.jsxs("strong",{children:[e.address.street,", ",e.address.number]})]}),e.address.neighborhood," - ",e.address.city,","," ",e.address.state]})]}),y.jsxs("div",{children:[y.jsx(Co,{tint:"yellow",children:y.jsx(ju,{size:20,weight:"fill"})}),y.jsxs("span",{children:[y.jsx("p",{children:"Delivery due to "}),y.jsx("p",{children:y.jsx("strong",{children:"20 min"})})]})]}),y.jsxs("div",{children:[y.jsx(Co,{tint:"orange",children:y.jsx(Hu,{size:20,weight:"fill"})}),y.jsxs("span",{children:[y.jsx("p",{children:"Payment upon delivery"}),y.jsx("p",{children:y.jsx("strong",{children:String(e.payment).toUpperCase()})})]})]})]}),y.jsx("img",{src:vg,alt:"image"})]})]})})}const wg=M.header`
   position: sticky;
   top: 0;
   height: 6.5rem;
@@ -620,7 +620,7 @@ Error generating stack: `+i.message+`
   color: ${e=>e.theme.colors.secondary.dark};
 
   user-select: none;
-`,Eg="/assets/logo-B2hX37pg.svg",Sg=M(uf)`
+`,Eg="/rocketseat-coffee-delivery/assets/logo-B2hX37pg.svg",Sg=M(uf)`
   position: relative;
   display: flex;
   align-items: center;
