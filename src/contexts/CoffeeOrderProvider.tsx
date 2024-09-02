@@ -1,5 +1,4 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const CoffeesData: ICoffee[] = [
   {
@@ -182,7 +181,7 @@ interface ICoffeeOrderProviderProps {
 }
 
 export function CoffeeOrderProvider({ children }: ICoffeeOrderProviderProps) {
-  const [coffees, setCoffees] = useState<ICoffee[]>(CoffeesData);
+  const coffees = CoffeesData;
   const [order, setOrder] = useState<ICoffeeOrder>({
     cart: [],
     address: {
