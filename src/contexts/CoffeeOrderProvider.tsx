@@ -1,5 +1,20 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 
+import coffeeTraditional from "../assets/coffee-traditional.png";
+import coffeeAmerican from "../assets/coffee-american.png";
+import coffeeCreamy from "../assets/coffee-creamy.png";
+import coffeeIce from "../assets/coffee-ice.png";
+import coffeeMilk from "../assets/coffee-milk.png";
+import coffeeLatte from "../assets/coffee-latte.png";
+import coffeeCappuccino from "../assets/coffee-capuccino.png";
+import coffeeMacchiato from "../assets/coffee-macchiato.png";
+import coffeeMocaccino from "../assets/coffee-mocaccino.png";
+import coffeeChocolate from "../assets/coffee-chocolate.png";
+import coffeeCuban from "../assets/coffee-cuban.png";
+import coffeeHawaiian from "../assets/coffee-hawaiian.png";
+import coffeeIrish from "../assets/coffee-irish.png";
+import coffeeArabic from "../assets/coffee-arabic.png";
+
 const CoffeesData: ICoffee[] = [
   {
     id: 1,
@@ -7,7 +22,7 @@ const CoffeesData: ICoffee[] = [
     description:
       "The traditional origin of coffee made with hot water and sugar ",
     price: "2.50",
-    image: "/src/assets/coffee-traditional.png",
+    image: coffeeTraditional,
     tags: ["traditional"],
   },
   {
@@ -15,8 +30,7 @@ const CoffeesData: ICoffee[] = [
     name: "American Expresso",
     description: "Diluted expresso with hot water",
     price: "2.30",
-
-    image: "/src/assets/coffee-american.png",
+    image: coffeeAmerican,
     tags: ["traditional"],
   },
   {
@@ -24,7 +38,7 @@ const CoffeesData: ICoffee[] = [
     name: "Creamy Expresso",
     description: "Expresso coffee with creamy foam",
     price: "3.00",
-    image: "/src/assets/coffee-creamy.png",
+    image: coffeeCreamy,
     tags: ["traditional"],
   },
   {
@@ -32,7 +46,7 @@ const CoffeesData: ICoffee[] = [
     name: "Ice Expresso",
     description: "Expresso coffee with ice cubes",
     price: "3.20",
-    image: "/src/assets/coffee-ice.png",
+    image: coffeeIce,
     tags: ["traditional", "cold"],
   },
   {
@@ -40,7 +54,7 @@ const CoffeesData: ICoffee[] = [
     name: "Café with Milk",
     description: "Half dose of coffee with milk",
     price: "2.20",
-    image: "/src/assets/coffee-milk.png",
+    image: coffeeMilk,
     tags: ["traditional", "milk"],
   },
   {
@@ -48,7 +62,7 @@ const CoffeesData: ICoffee[] = [
     name: "Latte",
     description: "Whole bean coffee with steamed milk and foam",
     price: "2.90",
-    image: "/src/assets/coffee-latte.png",
+    image: coffeeLatte,
     tags: ["traditional", "milk"],
   },
   {
@@ -56,7 +70,7 @@ const CoffeesData: ICoffee[] = [
     name: "Capuccino",
     description: "Expresso coffee with cinnamon and milk foam",
     price: "4.20",
-    image: "/src/assets/coffee-capuccino.png",
+    image: coffeeCappuccino,
     tags: ["traditional", "milk"],
   },
   {
@@ -64,7 +78,7 @@ const CoffeesData: ICoffee[] = [
     name: "Macchiato",
     description: "Expresso coffee with hot water and milk foam",
     price: "4.20",
-    image: "/src/assets/coffee-macchiato.png",
+    image: coffeeMacchiato,
     tags: ["traditional", "milk"],
   },
   {
@@ -72,7 +86,7 @@ const CoffeesData: ICoffee[] = [
     name: "Mocaccino",
     description: "Expresso coffee with milk and chocolate",
     price: "4.20",
-    image: "/src/assets/coffee-mocaccino.png",
+    image: coffeeMocaccino,
     tags: ["traditional", "milk"],
   },
   {
@@ -80,7 +94,7 @@ const CoffeesData: ICoffee[] = [
     name: "Hot Chocolate",
     description: "Drink with hot milk and chocolate, no caffeine",
     price: "3.50",
-    image: "/src/assets/coffee-chocolate.png",
+    image: coffeeChocolate,
     tags: ["special", "milk"],
   },
   {
@@ -89,7 +103,7 @@ const CoffeesData: ICoffee[] = [
     description:
       "Cold coffee with chocolate, with rum, foamy milk and ice cubes",
     price: "5.90",
-    image: "/src/assets/coffee-cuban.png",
+    image: coffeeCuban,
     tags: ["special", "alcoholic", "cold"],
   },
   {
@@ -97,7 +111,7 @@ const CoffeesData: ICoffee[] = [
     name: "Hawaiian",
     description: "Drink made with hot water and coconut milk",
     price: "5.90",
-    image: "/src/assets/coffee-hawaiian.png",
+    image: coffeeHawaiian,
     tags: ["special"],
   },
   {
@@ -105,7 +119,7 @@ const CoffeesData: ICoffee[] = [
     name: "Arabic",
     description: "Drink made with hot water, arabic coffee grains and spices",
     price: "6.70",
-    image: "/src/assets/coffee-arabic.png",
+    image: coffeeArabic,
     tags: ["special"],
   },
   {
@@ -113,7 +127,7 @@ const CoffeesData: ICoffee[] = [
     name: "Irish",
     description: "Drink made with hot water, Irish wiskey, sugar and chantilly",
     price: "7.10",
-    image: "/src/assets/coffee-irish.png",
+    image: coffeeIrish,
     tags: ["special", "alcoholic"],
   },
 ];
