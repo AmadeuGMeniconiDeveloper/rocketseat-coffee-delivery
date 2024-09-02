@@ -3,11 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://AmadeuGMeniconiDeveloper.github.io/rocketseat-coffee-delivery",
   "scripts": {
     "dev": "vite",
-    "predeploy": "tsc -b && vite build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "vite build"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
