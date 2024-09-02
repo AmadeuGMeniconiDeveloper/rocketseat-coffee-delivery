@@ -1,5 +1,21 @@
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./routes";
+import { ThemeProvider } from "styled-components";
+import { lightTheme } from "./styles/themes/light";
+import { GlobalStyles } from "./styles/global";
+import { CoffeeOrderProvider } from "./contexts/CoffeeOrderProvider";
+
 function App() {
-  return <></>;
+  return (
+    <ThemeProvider theme={lightTheme}>
+      <CoffeeOrderProvider>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </CoffeeOrderProvider>
+      <GlobalStyles />
+    </ThemeProvider>
+  );
 }
 
 export default App;
