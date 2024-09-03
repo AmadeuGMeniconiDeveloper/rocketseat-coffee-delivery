@@ -56,7 +56,7 @@ export function Success() {
                 <span>
                   <p>Payment upon delivery</p>
                   <p>
-                    <strong>{String(order.payment).toUpperCase()}</strong>
+                    <strong>{order.payment}</strong>
                   </p>
                 </span>
               </div>
