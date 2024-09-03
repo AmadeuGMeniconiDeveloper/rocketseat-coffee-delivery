@@ -7,6 +7,7 @@ export const SuccessContainer = styled.main`
   flex-direction: column;
   justify-content: center;
   gap: 2.5rem;
+  margin-bottom: 4rem;
 `;
 
 export const SuccessTitleContainer = styled.div`
