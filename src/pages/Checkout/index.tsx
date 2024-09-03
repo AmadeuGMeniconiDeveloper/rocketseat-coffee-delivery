@@ -1,6 +1,6 @@
 import { FormEvent, useContext } from "react";
-
 import { useNavigate } from "react-router-dom";
+
 import { NumberInput } from "../../components/NumberInput";
 
 import {
@@ -214,16 +214,16 @@ export function Checkout() {
             <FormPaymentSection id="payment" disabled={isDiabled}>
               <FormPaymentInputContainer
                 htmlFor="credit"
-                selected={order.payment === "credit card"}
+                selected={order.payment === Payment.CREDIT}
               >
                 <CreditCard size={16} weight="regular" color="#8047F8" />
                 CREDIT CARD
                 <input
                   id="credit"
-                  value="credit card"
+                  value={Payment.CREDIT}
                   name="payment"
                   type="radio"
-                  checked={order.payment === "credit card"}
+                  checked={order.payment === Payment.CREDIT}
                   onChange={e => handleSelectPayment(e.target.value as Payment)}
                   disabled={isDiabled}
                   required
@@ -231,14 +231,14 @@ export function Checkout() {
               </FormPaymentInputContainer>
               <FormPaymentInputContainer
                 htmlFor="debit"
-                selected={order.payment === "debit card"}
+                selected={order.payment === Payment.DEBIT}
               >
                 <input
                   id="debit"
-                  value="debit card"
+                  value={Payment.DEBIT}
                   name="payment"
                   type="radio"
-                  checked={order.payment === "debit card"}
+                  checked={order.payment === Payment.DEBIT}
                   onChange={e => handleSelectPayment(e.target.value as Payment)}
                   disabled={isDiabled}
                   required
@@ -248,14 +248,14 @@ export function Checkout() {
               </FormPaymentInputContainer>
               <FormPaymentInputContainer
                 htmlFor="cash"
-                selected={order.payment === "cash"}
+                selected={order.payment === Payment.CASH}
               >
                 <input
                   id="cash"
-                  value="cash"
+                  value={Payment.CASH}
                   name="payment"
                   type="radio"
-                  checked={order.payment === "cash"}
+                  checked={order.payment === Payment.CASH}
                   onChange={e => handleSelectPayment(e.target.value as Payment)}
                   disabled={isDiabled}
                   required

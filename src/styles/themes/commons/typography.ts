@@ -1,4 +1,4 @@
-export const tipography = {
+export const typography = {
   title: {
     font: "SUSE",
     size: {
@@ -28,4 +28,4 @@ export const tipography = {
     },
     lineHeight: { short: "130%", tall: "160%" },
   },
-} as const;
+};

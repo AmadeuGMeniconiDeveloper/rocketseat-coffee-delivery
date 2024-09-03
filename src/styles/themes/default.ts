@@ -2,7 +2,7 @@ import { tipography } from "./typography";
 
 type ThemeMode = "light" | "dark";
 
-export const lightTheme = {
+export const defaultTheme = {
   mode: "light" as ThemeMode,
   colors: {
     tints: {

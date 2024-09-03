@@ -1,9 +1,8 @@
-import { DefaultTheme } from "styled-components/dist/types";
 import { tipography } from "./typography";
 
 type ThemeMode = "light" | "dark";
 
-export const darkTheme: DefaultTheme = {
+export const darkTheme = {
   mode: "light" as ThemeMode,
   colors: {
     tints: {
@@ -30,4 +29,4 @@ export const darkTheme: DefaultTheme = {
     },
   },
   tipography: tipography,
-};
+} as const;

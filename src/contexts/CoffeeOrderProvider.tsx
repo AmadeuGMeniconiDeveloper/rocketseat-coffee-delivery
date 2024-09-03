@@ -133,8 +133,13 @@ const CoffeesData: ICoffee[] = [
 ];
 
 export type Operation = "increment" | "decrement";
-export type Payment = "credit card" | "debit card" | "cash";
 export type Tag = "traditional" | "special" | "alcoholic" | "cold" | "milk";
+
+export enum Payment {
+  CREDIT = "Credit Card",
+  DEBIT = "Debit Card",
+  CASH = "Cash",
+}
 
 export interface ICoffee {
   id: number;
@@ -161,7 +166,7 @@ export interface ICoffeeOrder {
     city: string;
     state: string;
   };
-  payment?: Payment;
+  payment: Payment;
   subTotal: number;
   deliveryFee: number;
   total: number;
@@ -207,6 +212,7 @@ export function CoffeeOrderProvider({ children }: ICoffeeOrderProviderProps) {
       city: "",
       state: "",
     },
+    payment: Payment.CREDIT,
     subTotal: 0,
     deliveryFee: 3.5,
     total: 0,
@@ -309,6 +315,7 @@ export function CoffeeOrderProvider({ children }: ICoffeeOrderProviderProps) {
         city: "",
         state: "",
       },
+      payment: Payment.CREDIT,
       subTotal: 0,
       deliveryFee: 3.5,
       total: 0,

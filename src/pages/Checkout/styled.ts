@@ -156,6 +156,10 @@ export const FormPaymentInputContainer = styled.label<IFormPaymentInputContainer
     width: 100%;
     height: 100%;
     opacity: 0;
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
   }
 `;
 
