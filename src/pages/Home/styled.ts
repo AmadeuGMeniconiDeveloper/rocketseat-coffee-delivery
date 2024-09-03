@@ -4,9 +4,7 @@ import { DefaultTheme } from "styled-components/dist/types";
 export const HomeContainer = styled.main`
   display: flex;
   flex-direction: column;
-
   gap: 3.5rem;
-
   padding-block: 0 10rem;
 `;
 
@@ -19,17 +17,12 @@ export const BannerBackground = styled.div<BannerProps>`
   left: 0;
   right: 0;
   top: 0;
-
   height: 100vh;
   width: 100%;
-
   z-index: -1;
-
   margin-top: 4rem;
-
   display: flex;
   flex-direction: column;
-
   background-image: url(${props => props.image});
   background-repeat: no-repeat;
   background-position: center;
@@ -39,9 +32,7 @@ export const BannerBackground = styled.div<BannerProps>`
 export const BannerContainer = styled.div`
   width: 100%;
   height: calc(100vh - 6.5rem);
-
   padding-block: 16rem;
-
   display: flex;
   align-items: center;
   gap: 3rem;
@@ -57,7 +48,6 @@ export const TitleContainer = styled.div`
 export const Title = styled.div`
   display: flex;
   flex-direction: column;
-
   gap: 1rem;
 
   & > h1 {
