@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, ReactNode, useEffect } from "react";
 
 import coffeeTraditional from "../assets/coffee-traditional.png";
 import coffeeAmerican from "../assets/coffee-american.png";
@@ -14,6 +14,7 @@ import coffeeCuban from "../assets/coffee-cuban.png";
 import coffeeHawaiian from "../assets/coffee-hawaiian.png";
 import coffeeIrish from "../assets/coffee-irish.png";
 import coffeeArabic from "../assets/coffee-arabic.png";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const CoffeesData: ICoffee[] = [
   {
@@ -201,22 +202,25 @@ interface ICoffeeOrderProviderProps {
 
 export function CoffeeOrderProvider({ children }: ICoffeeOrderProviderProps) {
   const coffees = CoffeesData;
-  const [order, setOrder] = useState<ICoffeeOrder>({
-    cart: [],
-    address: {
-      zipcode: "",
-      street: "",
-      number: "",
-      complement: "",
-      neighborhood: "",
-      city: "",
-      state: "",
-    },
-    payment: Payment.CREDIT,
-    subTotal: 0,
-    deliveryFee: 3.5,
-    total: 0,
-  } as ICoffeeOrder);
+  const [order, setOrder] = useLocalStorage<ICoffeeOrder>(
+    "@coffee-delivery:current-order",
+    {
+      cart: [],
+      address: {
+        zipcode: "",
+        street: "",
+        number: "",
+        complement: "",
+        neighborhood: "",
+        city: "",
+        state: "",
+      },
+      payment: Payment.CREDIT,
+      subTotal: 0,
+      deliveryFee: 3.5,
+      total: 0,
+    } as ICoffeeOrder
+  );
 
   function moveCoffeeToCart(coffee: ICoffee, amount = 1) {
     if (order.cart.find(item => item.coffee.id === coffee.id)) {
